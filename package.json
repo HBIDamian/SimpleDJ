@@ -1,0 +1,157 @@
+{
+  "name": "simple-dj",
+  "version": "1.0.0",
+  "description": "A beautiful and feature-rich DJ music player built with Electron. Features crossfading, equalizer, playlist management, and more.",
+  "main": "src/startup.js",
+  "homepage": "https://github.com/HBIDamian/simple-dj",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HBIDamian/simple-dj.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HBIDamian/simple-dj/issues"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "build-win-portable": "electron-builder --win portable",
+    "build-mac": "electron-builder --mac",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist-portable": "electron-builder --win portable"
+  },
+  "keywords": [
+    "electron",
+    "music",
+    "player",
+    "dj",
+    "audio",
+    "crossfade",
+    "equalizer",
+    "playlist",
+    "mixer"
+  ],
+  "author": {
+    "name": "SimpleDJ Team",
+    "url": "https://github.com/HBIDamian"
+  },
+  "contributors": [
+    {
+      "name": "HBIDamian",
+      "url": "https://github.com/HBIDamian"
+    }
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "electron-store": "^8.1.0"
+  },
+  "build": {
+    "appId": "com.simpledj.app",
+    "productName": "SimpleDJ",
+    "copyright": "Copyright © 2025 HBIDamian. All rights reserved.",
+    "electronLanguages": ["en-GB"],
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "assets",
+        "to": "assets",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.ico",
+      "publisherName": "SimpleDJ Team",
+      "verifyUpdateCodeSignature": false,
+      "requestedExecutionLevel": "asInvoker",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "SimpleDJ-${version}-portable.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SimpleDJ",
+      "uninstallDisplayName": "SimpleDJ Music Player",
+      "license": "LICENSE",
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "installerHeaderIcon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        }
+      ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.music",
+      "bundleVersion": "1.0.0"
+    },
+    "dmg": {
+      "title": "SimpleDJ ${version}",
+      "icon": "assets/icon.icns",
+      "background": "assets/dmg-background.png",
+      "window": {
+        "width": 540,
+        "height": 380
+      },
+      "contents": [
+        {
+          "x": 410,
+          "y": 190,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 190,
+          "type": "file"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.png",
+      "category": "AudioVideo;Audio;Music;Player"
+    }
+  }
+}

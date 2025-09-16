@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "buildVersion": "1.0.0.0",
+  "productName": "SimpleDJ Music Player",
+  "companyName": "HBIDamian",
+  "fileDescription": "Professional DJ Music Player with Crossfading and Equalizer",
+  "internalName": "SimpleDJ",
+  "originalFilename": "SimpleDJ.exe",
+  "legalCopyright": "Copyright © 2025 HBIDamian. All rights reserved.",
+  "fileVersion": "1.0.0.0",
+  "productVersion": "1.0.0",
+  "comments": "Built with Electron - A professional DJ application for mixing and playing music"
+}

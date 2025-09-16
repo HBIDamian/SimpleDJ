@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00bfa6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circle background -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad)" />
+
+  <!-- Vinyl record (black circle with rings) -->
+  <circle cx="50" cy="50" r="22" fill="black" />
+  <circle cx="50" cy="50" r="6" fill="white" />
+  <circle cx="50" cy="50" r="2" fill="black" />
+</svg>
